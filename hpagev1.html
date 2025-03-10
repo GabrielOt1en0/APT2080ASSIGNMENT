@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+
+        h2 {
+            --a: -45deg; /* control the angle */
+            --t: .23em; /* thickness of the underline */ 
+            color: black;
+        }
+        h2 span {
+            --_s: calc(var(--t)*cos(var(--a)));
+            background:
+            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
+            bottom/var(--i,90%) var(--t) no-repeat;
+            padding: 0 .25em calc(var(--t) + .1em);
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            transition: .3s;
+            cursor: pointer;
+        }
+       h2:hover span {
+       --i: 100%;
+        }
+
+       h2 {
+           font-family: sans-serif;
+           font-size: 3rem;
+           font-weight: bold;
+           line-height: 1.5;
+           text-transform: capitalize;
+          }
+        p {
+            font-family: Georgia;
+            text-align: center;
+        }
+        body {
+            background-image: url("C:/Users/HP/Downloads/pawel-czerwinski-M40QnK-PXkI-unsplash.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .slideshow-container {
+            position: absolute;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            text-align: left;
+        }
+        #slideshow {
+            width: 400px;
+            height: 600px;
+            transition: opacity 1s ease;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: inherit;
+        }
+        .topnav a {
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: inherit;
+            color: black;
+        }
+        .topnav a.active {
+            background-color: inherit;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="C:/Users/HP/OneDrive/Documents/APT2080/webpage/login page.html">Sign up</a>
+    </div>
+
+    <h2><span>About</span></h2>
+    <p>The [University Name] Event Management System is designed to simplify the planning and execution of campus events, ensuring a seamless experience for students, faculty, and staff...</p>
+    
+    <h2><span>News</span></h2>
+    <ol>
+        <li><a href = "https://www.ticketsasa.com/events/listing/allUpcoming">Upcoming</a></li>
+        <li><a href = "https://www.ticketsasa.com/events/listing/weekend">Coming soon</a></li>
+        <li><a href = "https://www.ticketsasa.com/events/listing/trending">Hot rn</a></li>
+       
+    </ol>
+    
+    <h2><span>Events</span></h2>
+    <div class="slideshow-container">
+        <img id="slideshow" src="C:/Users/HP/OneDrive/Documents/APT2080/webpage/university_bg.jpg" alt="Slideshow Image">
+    </div>
+
+    <script>
+        let images = [
+            "C:/Users/HP/OneDrive/Documents/APT2080/webpageball.jpg",
+            "C:/Users/HP/OneDrive/Documents/APT2080/webpage/seminar.jpg.jpeg", 
+            "C:/Users/HP/OneDrive/Documents/APT2080/webpage/Silent disco break voor thuis.jpeg" 
+        ];
+        let index = 0;
+         function changeImage() {
+            slideshow.style.opacity = 0;
+            setTimeout(() => {
+                index = (index + 1) % images.length;
+                slideshow.src = images[index];
+                slideshow.style.opacity = 1;
+            }, 1000); // Match transition duration
+        }
+        setInterval(changeImage, 3000);    
+</script>
+</body>
+</html>
