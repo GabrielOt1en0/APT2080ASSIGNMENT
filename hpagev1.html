@@ -4,38 +4,53 @@
     <title>Welcome Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-   a:link {
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease-in-out; 
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-   
-    a:active {
-        color: black;
-    }
+        body {
+            background-image:url('https://images.unsplash.com/photo-1731398916709-19c7ae1be371?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')  ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px; /* Add padding for better spacing */
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
 
-    
-    a:visited {
-        color: white;
-    }
+        a:link {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out; 
+        }
 
+        a:active {
+            color: black;
+        }
 
-    a:hover {
-        color: grey;
-        text-decoration: underline; 
-    }
+        a:visited {
+            color: white;
+        }
+
+        a:hover {
+            color: grey;
+            text-decoration: underline; 
+        }
 
         h2 {
             --a: -45deg; /* control the angle */
             --t: .23em; /* thickness of the underline */ 
             color: black;
+            margin: 20px 0; /* Add margin for spacing */
         }
+
         h2 span {
             --_s: calc(var(--t)*cos(var(--a)));
-            background:
-            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
+            background: linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
             bottom/var(--i,90%) var(--t) no-repeat;
             padding: 0 .25em calc(var(--t) + .1em);
             -webkit-box-decoration-break: clone;
@@ -43,47 +58,43 @@
             transition: .3s;
             cursor: pointer;
         }
-       h2:hover span {
-       --i: 100%;
+
+        h2:hover span {
+            --i: 100%;
         }
 
-       h2 {
-           font-family: sans-serif;
-           font-size: 3rem;
-           font-weight: bold;
-           line-height: 1.5;
-           text-transform: capitalize;
-          }
         p {
             font-family: Georgia;
             text-align: center;
+            margin: 10px 0; /* Add margin for spacing */
         }
-        body {
-            background-image: url("C:/Users/HP/Downloads/pawel-czerwinski-M40QnK-PXkI-unsplash.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+
         .slideshow-container {
-            position: absolute;
-            width: 400px;
-            max-width: 400px;
-            margin: auto;
-            overflow: hidden;
-            text-align: left;
+            position: left;
+            max-width: 600px;
+            margin: left; /* Center the slideshow */
         }
-        #slideshow {
-            width: 400px;
-            height: 400px;
-            transition: opacity 1s ease;
+
+        .slides {
+            display: none;
+            width: 100%;
         }
+
+        .fade {
+            animation: fadeEffect 1.5s;
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0.4;}
+            to {opacity: 1;}
+        }
+
         .topnav {
             overflow: hidden;
             background-color: inherit;
+            margin-bottom: 20px; /* Add margin for spacing */
         }
+
         .topnav a {
             float: right;
             color: #f2f2f2;
@@ -92,10 +103,12 @@
             text-decoration: none;
             font-size: 17px;
         }
+
         .topnav a:hover {
             background-color: inherit;
             color: black;
         }
+
         .topnav a.active {
             background-color: inherit;
             color: black;
@@ -112,33 +125,32 @@
     
     <h2><span>News</span></h2>
     <ol>
-        <li><a href = "https://www.ticketsasa.com/events/listing/allUpcoming">Upcoming</a></li>
-        <li><a href = "https://www.ticketsasa.com/events/listing/weekend">Coming soon</a></li>
-        <li><a href = "https://www.ticketsasa.com/events/listing/trending">Hot rn</a></li>
-       
+        <li><a href="https://www.ticketsasa.com/events/listing/allUpcoming">Upcoming</a></li>
+        <li><a href="https://www.ticketsasa.com/events/listing/weekend">Coming soon</a></li>
+        <li><a href="https://www.ticketsasa.com/events/listing/trending">Hot rn</a></li>
     </ol>
     
     <h2><span>Events</span></h2>
     <div class="slideshow-container">
-        <img id="slideshow" img src="C:/Users/HP/OneDrive/Documents/APT2080/webpage/58be5226ca0cd974b78b21f79447eba0.jpg" alt="Slideshow Image">
+        <img class="slides fade" src="https://media.istockphoto.com/id/1125687449/photo/young-woman-at-silent-disco.jpg?s=612x612&w=0&k=20&c=5C7doGcdhuZBEO2LkJSxH_sYVS-IGNz8CQoALhfVn8g=" alt="Image 1">
+        <img class="slides fade" src="https://images.unsplash.com/photo-1741636174186-3fffe1614c39?q=80&w=1983&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="Image 2">
+        <img class="slides fade" src="https://images.unsplash.com/photo-1688632344340-42462d8c01f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  alt="Image 3">
     </div>
 
     <script>
-        let images = [
-            "C:/Users/HP/OneDrive/Documents/APT2080/webpageball.jpg",
-            "C:/Users/HP/OneDrive/Documents/APT2080/webpage/seminar.jpg.jpeg", 
-            "C:/Users/HP/OneDrive/Documents/APT2080/webpage/Silent disco break voor thuis.jpeg" 
-        ];
-        let index = 0;
-         function changeImage() {
-            slideshow.style.opacity = 0;
-            setTimeout(() => {
-                index = (index + 1) % images.length;
-                slideshow.src = images[index];
-                slideshow.style.opacity = 1;
-            }, 1000); // Match transition duration
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); 
         }
-        setInterval(changeImage, 3000);    
-</script>
+    </script>
 </body>
 </html>

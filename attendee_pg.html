@@ -3,83 +3,163 @@
 <head>
     <title>Welcome Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+    a:link {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out; 
+    }
 
+    a:active {
+        color: black;
+    }
 
-        h2 {
-            --a: -45deg; /* control the angle */
-            --t: .23em; /* thickness of the underline */ 
-            color: black;
-        }
-        h2 span {
-            --_s: calc(var(--t)*cos(var(--a)));
-            background:
-            linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
-            bottom/var(--i,90%) var(--t) no-repeat;
-            padding: 0 .25em calc(var(--t) + .1em);
-            -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
-            transition: .3s;
-            cursor: pointer;
-        }
-       h2:hover span {
-       --i: 100%;
-        }
+    a:visited {
+        color: white;
+    }
 
-       h2 {
-           font-family: sans-serif;
-           font-size: 3rem;
-           font-weight: bold;
-           line-height: 1.5;
-           text-transform: capitalize;
-          }
-        p {
-            font-family: Georgia;
-            text-align: center;
-        }
-        body {
-            background-image: url("C:/Users/HP/Downloads/pawel-czerwinski-M40QnK-PXkI-unsplash.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .slideshow-container {
-            position: absolute;
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            overflow: hidden;
-            text-align: left;
-        }
-        #slideshow {
-            width: 400px;
-            height: 600px;
-            transition: opacity 1s ease;
-        }
-        .topnav {
-            overflow: hidden;
-            background-color: inherit;
-        }
-        .topnav a {
-            float: right;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-        .topnav a:hover {
-            background-color: inherit;
-            color: black;
-        }
-        .topnav a.active {
-            background-color: inherit;
-            color: black;
-        }
-    </style>
+    a:hover {
+        color: grey;
+        text-decoration: underline; 
+    }
+     .button-container {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically (if needed) */
+        height: 100vh; /* Full height of the viewport */
+    }
+
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #FA8072; /* Button background color */
+        border: none;
+        color: #FFFFFF; /* Text color */
+        text-align: center;
+        font-size: 20px; /* Adjusted font size */
+        padding: 15px 30px; /* Padding for button */
+        width: auto; /* Width set to auto for flexibility */
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        text-transform: uppercase; /* Uppercase text */
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        content: '\00bb'; /* Arrow character */
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover span {
+        padding-right: 25px; /* Space for arrow on hover */
+    }
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0; /* Show arrow on hover */
+    }
+
+    h2 {
+        --a: -45deg; /* control the angle */
+        --t: .23em; /* thickness of the underline */ 
+        color: black;
+    }
+
+    h2 span {
+        --_s: calc(var(--t)*cos(var(--a)));
+        background: linear-gradient(var(--a),#0000 var(--_s),currentColor 0 calc(100% - var(--_s)),#0000 0) 
+        bottom/var(--i,90%) var(--t) no-repeat;
+        padding: 0 .25em calc(var(--t) + .1em);
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    h2:hover span {
+        --i: 100%;
+    }
+
+    h2 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: capitalize;
+    }
+    h3 {
+        font-weight: bold;
+        text-transform: underline;
+     }
+
+    p {
+        font-family: Georgia;
+        text-align: center;
+    }
+
+    body {
+        background-image: url('https://images.unsplash.com/photo-1731018804371-16e02792b8d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .slideshow-container {
+        position: absolute;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    #slideshow {
+        width: 400px;
+        height: 600px;
+        transition: opacity 1s ease;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: inherit;
+    }
+
+    .topnav a {
+        float: right;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: inherit;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: inherit;
+        color: black;
+    }
+</style>
 </head>
 <body>
     <h2><span>About</span></h2>
@@ -94,26 +174,70 @@
     </ol>
     
     <h2><span>Events</span></h2>
-    <div class="slideshow-container">
-        <img id="slideshow" src="C:/Users/HP/OneDrive/Documents/APT2080/webpage/university_bg.jpg" alt="Slideshow Image">
+<div class="events-container">
+    <div class="event">
+        <h3>Annual Science Fair</h3>
+        <p>Location:Auditotium</p>
+        <p>TBA</p>
+        <p>Time: 10:00 AM - 4:00 PM</p>
+        <p>Description: Join us for a day of innovation and creativity as students showcase their science projects and experiments.</p>
+        <button class="button">
+        <i class="fa-solid fa-book"></i>
+        <span>Read more</span>
+        </button>
+        <button class="button">
+        <i class="fa-solid fa-ticket"></i>
+        <span>Buy ticket</span>
+        </button>
+      
     </div>
+    <div class="event">
+        <h3 class ="h3">Spring Concert</h3>
+        <p>TBA</p>
+        <p>Location:Auditorium</p>
+        <p>Time: 6:00 PM - 9:00 PM</p>
+        <p>Description: Enjoy an evening of music featuring local bands and student performers in the campus auditorium.</p>
+        <button class="button">
+        <i class="fa-solid fa-book"></i>
+        <span>Read more</span>
+        </button>
+        <button class="button">
+        <i class="fa-solid fa-ticket"></i>
+        <span>Buy ticket</span>
+        </button>
+    </div>
+    <div class="event">
+        <h3 class ="h3" >Career Fair</h3>
+        <p>TBA</p>
+        <p>Location:Parking lot A</p>
+        <p>Time: 11:00 AM - 3:00 PM</p>
+        <p>Description: Meet potential employers and explore internship and job opportunities at our annual career fair.</p>
+        <button class="button">
+        <i class="fa-solid fa-book"></i>
+        <span>Read more</span>
+        </button>
+        <button class="button">
+        <i class="fa-solid fa-ticket"></i>
+        <span>Buy ticket</span>
+        </button>
 
-    <script>
-        let images = [
-            "C:/Users/HP/OneDrive/Documents/APT2080/webpageball.jpg",
-            "C:/Users/HP/OneDrive/Documents/APT2080/webpage/seminar.jpg.jpeg", 
-            "C:/Users/HP/OneDrive/Documents/APT2080/webpage/Silent disco break voor thuis.jpeg" 
-        ];
-        let index = 0;
-         function changeImage() {
-            slideshow.style.opacity = 0;
-            setTimeout(() => {
-                index = (index + 1) % images.length;
-                slideshow.src = images[index];
-                slideshow.style.opacity = 1;
-            }, 1000); // Match transition duration
-        }
-        setInterval(changeImage, 3000);    
-</script>
+    </div>
+    <div class="event">
+        <h3 class ="h3">Art Exhibition</h3>
+         <p>Location:Parking lot B</p>
+        <p>TBA</p>
+        <p>Time: 1:00 PM - 5:00 PM</p>
+        <p>Description: Discover the talent of our students at the annual art exhibition showcasing various forms of art.</p>
+        <button class="button">
+        <i class="fa-solid fa-book"></i>
+        <span>Read more</span>
+        </button>
+        <button class="button">
+        <i class="fa-solid fa-ticket"></i>
+        <span>Buy ticket</span>
+        </button>
+
+    </div>
+</div>
 </body>
 </html>
