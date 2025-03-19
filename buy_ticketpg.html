@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Payment | University Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Event Payment</h1>
+        
+        <!-- Event Selection -->
+        <div class="mb-4">
+            <label class="block text-lg font-semibold mb-2">Select Event:</label>
+            <select id="event" class="border p-2 rounded w-full">
+                <option value="Science Fair">Science fair - ksh500</option>
+                <option value="Spring-concert">Spring concert - ksh380</option>
+                <option value="Art-exhibition">Art Exhibition - ksh350</option>
+                <option value = "Career-fair">Career Fair - ksh450</option>
+            </select>
+        </div>
+
+        <!-- Attendee Details -->
+        <div class="mb-4">
+            <label class="block text-lg font-semibold mb-2">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" class="border p-2 rounded w-full">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-lg font-semibold mb-2">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email" class="border p-2 rounded w-full">
+        </div>
+
+        <!-- Payment Method -->
+        <div class="mb-4">
+            <label class="block text-lg font-semibold mb-2">Payment Method:</label>
+            <select id="payment-method" class="border p-2 rounded w-full">
+                <option value="credit-card">Credit Card</option>
+                <option value="bank-transfer">Bank Transfer</option>
+                <option value="M-pesa">M-pesa</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+
+        <!-- Pay Button -->
+        <button onclick="processPayment()" class="bg-blue-500 text-white px-4 py-2 rounded w-full">Proceed to Pay</button>
+
+        <!-- Payment Status -->
+        <p id="status" class="mt-4 text-center text-lg font-semibold"></p>
+    </div>
+
+    <script>
+        function processPayment() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const event = document.getElementById('event').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+            
+            if (!name || !email) {
+                document.getElementById('status').innerText = 'Please fill in all fields.';
+                document.getElementById('status').classList.add('text-red-500');
+                return;
+            }
+
+            document.getElementById('status').innerText = 'Processing payment...';
+            document.getElementById('status').classList.remove('text-red-500');
+            document.getElementById('status').classList.add('text-blue-500');
+
+            setTimeout(() => {
+                document.getElementById('status').innerText = 'Payment Successful!';
+                document.getElementById('status').classList.remove('text-blue-500');
+                document.getElementById('status').classList.add('text-green-500');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
