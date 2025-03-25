@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color:#ea0f83;
+        }
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .shape:first-child {
+            background: linear-gradient(#1845ad, #23a2f6);
+            left: -80px;
+            top: -80px;
+        }
+        .shape:last-child {
+            background: linear-gradient(to right, #ff512f, #f09819);
+            right: -30px;
+            bottom: -80px;
+        }
+        form {
+            height: 550px;
+            width: 400px;
+            background-color: #87CEFA;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            text-align: center;
+        }
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        ::placeholder {
+            color: #e5e5e5;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #ffffff;
+            color: #080710;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        .tabs button.active {
+            background-color: #ff512f;
+            color: white;
+        }
+         button.login-btn {
+         margin-top: 40px;
+         width: 100%;
+         background-color: #ffffff;
+         color: #080710;
+         padding: 15px 0;
+         font-size: 18px;
+         font-weight: 600;
+         border-radius: 5px;
+         cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Sign up</h3>
+        <div class="tabs">
+            <button type="button" class="tab-button active" onclick="switchTab('email')">Email</button>
+            <button type="button" class="tab-button" onclick="switchTab('phone')">Phone</button>
+        </div>
+        
+        <div id="email-tab">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter Email">
+            <p id="emailError" class="error"></p>
+        </div>
+        
+        <div id="phone-tab" style="display: none;">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter Phone Number">
+            <p id="phoneError" class="error"></p>
+        </div>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password">
+        
+        <a href="C:/Users/HP/OneDrive/Documents/APT2080/webpage/attendee_pg.html"><button class="login-btn" type="button" onclick="validateForm()">Sign up</button></a>
+        <p id="message"></p>
+    </form>
+    <script>
+        function switchTab(tab) {
+            document.getElementById("email-tab").style.display = tab === "email" ? "block" : "none";
+            document.getElementById("phone-tab").style.display = tab === "phone" ? "block" : "none";
+            document.querySelectorAll(".tab-button").forEach(button => button.classList.remove("active"));
+            document.querySelector(`.tab-button[onclick="switchTab('${tab}')"]`).classList.add("active");
+        }
+
+        function validateEmail(email) {
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function validatePhone(phone) {
+            let phonePattern = /^\d{10}$/;
+            return phonePattern.test(phone);
+        }
+
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+            let emailError = document.getElementById("emailError");
+            let phoneError = document.getElementById("phoneError");
+            let message = document.getElementById("message");
+            emailError.innerHTML = "";
+            phoneError.innerHTML = "";
+            message.innerHTML = "";
+
+            if (document.getElementById("email-tab").style.display === "block" && !validateEmail(email)) {
+                emailError.innerHTML = "Invalid email format.";
+                return;
+            }
+            if (document.getElementById("phone-tab").style.display === "block" && !validatePhone(phone)) {
+                phoneError.innerHTML = "Invalid phone number. Must be 10 digits.";
+                return;
+            }
+            message.innerHTML = "Login Successful!";
+            message.className = "success";
+        }
+    </script>
+</body>
+</html>

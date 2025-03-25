@@ -14,10 +14,51 @@ body, html {
   color: #777;
   line-height: 1.8;
 }
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #8a7f7d; /* Button background color */
+        border: none;
+        color: #FFFFFF; /* Text color */
+        text-align: center;
+        font-size: 20px; /* Adjusted font size */
+        padding: 15px 30px; /* Padding for button */
+        width: auto; /* Width set to auto for flexibility */
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        text-transform: uppercase; /* Uppercase text */
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        content: '\00bb'; /* Arrow character */
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover span {
+        padding-right: 25px; /* Space for arrow on hover */
+    }
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0; /* Show arrow on hover */
+    }
  p{
    font-size:16px;
    font-family:sans-serif;
    color:#FFE4E1;
+   text-align: center;
 }
  p1{
    font-size:16px;
@@ -107,9 +148,9 @@ body, html {
     <a href="#options" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> OPTIONS</a>
 <div class="subnav"><i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#Create Event">Create event</a>
-      <a href="#Track sales">Track sales</a>
-      <a href="#Promote sales">Promote sales</a>
+      <a href="C:/Users/HP/OneDrive/Documents/APT2080/webpage/create_event.html"><i class="fa fa-plus"></i>Create event</a>
+      <a href="C:/Users/HP/OneDrive/Documents/APT2080/webpage/payment_tracker.html"><i class="fa fa-tachometer"></i>Track sales</a>
+      <a href="#Promote sales"><i class="fa fa-retweet"></i>Boost event</a>
     </div>
    </div>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
@@ -118,6 +159,7 @@ body, html {
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    
     <a href="#options" class="w3-bar-item w3-button" onclick="toggleFunction()">OPTIONS</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
     
@@ -136,10 +178,8 @@ body, html {
   <h3 class="w3-center">EVENT ORGANISERS</h3>
   <p1>We have created a fictional "admin" website, this website is used for event organisers to communicate and work with the given institution (i.e USIU) </p1>
 
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-            <img src="C:/Users/HP/OneDrive/Documents/APT2080/webpage/🗿.jpeg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="333">
-    </div>
+ 
+   
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
@@ -150,7 +190,15 @@ body, html {
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">⬇️</span><br>
-    <button>Create Event</button>
+    <a href = "C:/Users/HP/OneDrive/Documents/APT2080/webpage/create_event.html"><button class="button"><i class="fa fa-plus"></i><span>Create Event</span></button></a>
+  </div>
+    <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">⬇️</span><br>
+    <a href = "C:/Users/HP/OneDrive/Documents/APT2080/webpage/payment_tracker.html"><button class="button"><i class="fa fa-tachometer"></i><span>Track sales</span></button></a>
+  </div>
+    <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">⬇️</span><br>
+    <button class="button"><i class="fa fa-retweet"></i><span>Boost Event</span></button>
   </div>
  
 </div>
@@ -174,7 +222,7 @@ body, html {
     </div>
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> NAIROBI, KE<br>
+        <a href =https://www.google.co.ke/maps/place/United+States+International+University+Africa/@-1.2180891,36.876639,17z/data=!3m1!4b1!4m6!3m5!1s0x182f15f826d2697b:0x283746033cb1b5a5!8m2!3d-1.2180945!4d36.8792139!16s%2Fm%2F0130s39z?hl=en&entry=ttu&g_ep=EgoyMDI1MDMxMC4wIKXMDSoASAFQAw%3D%3D><i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></a></i> NAIROBI, KE<br>
         <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +254 11121314<br>
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
       </div>

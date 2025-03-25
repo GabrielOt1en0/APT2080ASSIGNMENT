@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Creation Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Creation Dashboard</h2>
+    <form id="eventForm">
+        <div class="form-group">
+            <label for="title">Event Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location" name="location" required>
+                <option value="">Select a location</option>
+                <option value="Humanities rooftop">Humanities rooftop</option>
+                <option value="Parking Lot A">Parking Lot A</option>
+                <option value="Parking Lot B">Parking Lot B</option>
+                <option value="Auditorium">Auditorium</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+        <button type="submit">Create Event</button>
+    </form>
+    
+    <h2>Upcoming Events</h2>
+    <table id="eventTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+    
+    <script>
+        document.getElementById('eventForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let title = document.getElementById('title').value;
+            let date = document.getElementById('date').value;
+            let time = document.getElementById('time').value;
+            let location = document.getElementById('location').value;
+            
+            let table = document.getElementById('eventTable').getElementsByTagName('tbody')[0];
+            let rows = table.getElementsByTagName('tr');
+            
+            for (let i = 0; i < rows.length; i++) {
+                let cells = rows[i].getElementsByTagName('td');
+                if (cells.length > 0) {
+                    let existingDate = cells[1].innerText;
+                    let existingTime = cells[2].innerText;
+                    let existingLocation = cells[3].innerText;
+                    
+                    if (existingDate === date && existingTime === time && existingLocation === location) {
+                        alert('Scheduling conflict: Another event is already scheduled at this date, time, and location.');
+                        return;
+                    }
+                }
+            }
+            
+            let newRow = table.insertRow();
+            newRow.insertCell(0).innerText = title;
+            newRow.insertCell(1).innerText = date;
+            newRow.insertCell(2).innerText = time;
+            newRow.insertCell(3).innerText = location;
+            
+            document.getElementById('eventForm').reset();
+        });
+    </script>
+</body>
+</html>
