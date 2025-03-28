@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
     a:link {
-        color: black;
+        color: #46cde2;
         text-decoration: none;
         font-weight: bold;
         transition: color 0.3s ease-in-out; 
     }
 
     a:active {
-        color: black;
+        color: #dde246;
     }
 
     a:visited {
@@ -21,7 +21,7 @@
     }
 
     a:hover {
-        color: grey;
+        color: #cc0db5;
         text-decoration: underline; 
     }
     
@@ -29,9 +29,9 @@
     .button {
         display: inline-block;
         border-radius: 4px;
-        background-color: #FA8072; /* Button background color */
+        background-color: #3e0dcc; /* Button background color */
         border: none;
-        color: #FFFFFF; /* Text color */
+        color: #fffb00; /* Text color */
         text-align: center;
         font-size: 20px; /* Adjusted font size */
         padding: 15px 30px; /* Padding for button */
@@ -70,7 +70,7 @@
     h2 {
         --a: -45deg; /* control the angle */
         --t: .23em; /* thickness of the underline */ 
-        color: black;
+        color: grey;
     }
 
     h2 span {
@@ -98,15 +98,23 @@
     h3 {
         font-weight: bold;
         text-transform: underline;
+	color:#fffb00;
      }
+
+    p1 {
+        font-family: Georgia;
+        text-align: center;
+	color: #46cde2;
+    }
 
     p {
         font-family: Georgia;
         text-align: center;
+	color: #fffb00;
     }
 
     body {
-        background-image: url('https://images.unsplash.com/photo-1731018804371-16e02792b8d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        background-image: url('https://i.pinimg.com/474x/d5/d7/23/d5d72364975a820adf2046c8e4cb8930.jpg')
 ;
         background-size: cover;
         background-position: center;
@@ -154,6 +162,23 @@
         background-color: inherit;
         color: black;
     }
+    .left-img {
+           	 float: left;
+            	margin-right: 15px; 
+    		width: 150px;  /* Adjust width to fit well within its container */
+    		height: auto;  /* Maintain aspect ratio */
+    		margin-right: 15px; /* Space between image and text */
+    		max-width: 100%; /* Ensures it doesn't overflow its container */
+		max-height: 100%;
+        }
+	  .event::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+	
+     
+
 </style>
 </head>
 <body>
@@ -161,8 +186,9 @@
 
 <marquee>login to access organizer privileges</marquee><a href = "C:/Users/HP/OneDrive/Documents/APT2080/webpage/login page.html"><button class="button">Log in</button></a>
 </div>
+
     <h2><span>About</span></h2>
-    <p>We're thrilled to have you here! This platform is your one-stop destination for discovering, registering, and managing your participation in exciting university events. Whether you're looking to attend academic conferences, cultural festivals, or networking sessions, we’ve got you covered. Easily browse upcoming events, secure your spot with hassle-free online payments, and stay updated on all the happenings around campus. Get ready to connect, learn, and make unforgettable memories! 🚀</p>
+    <p1>We're thrilled to have you here! This platform is your one-stop destination for discovering, registering, and managing your participation in exciting university events. Whether you're looking to attend academic conferences, cultural festivals, or networking sessions, we’ve got you covered. Easily browse upcoming events, secure your spot with hassle-free online payments, and stay updated on all the happenings around campus. Get ready to connect, learn, and make unforgettable memories! 🚀</p1>
     
     <h2><span>News</span></h2>
     <ol>
@@ -175,7 +201,9 @@
     <h2><span>Events</span></h2>
 <div class="events-container">
     <div class="event">
+
         <h3>Annual Science Fair</h3>
+        <img src="https://i.pinimg.com/474x/e2/9a/af/e29aaf80dbcc410ba1cf12274c77b594.jpg" alt="Example Image" class="left-img">
         <p>Location:Auditotium</p>
         <p>TBA</p>
         <p>Time: 10:00 AM - 4:00 PM</p>
@@ -192,6 +220,7 @@
     </div>
     <div class="event">
         <h3 class ="h3">Spring Concert</h3>
+        <img src="https://i.pinimg.com/474x/01/2e/af/012eaf64cff1d6bbffb07eb63f5d1326.jpg" alt="Example Image" class="left-img">
         <p>TBA</p>
         <p>Location:Auditorium</p>
         <p>Time: 6:00 PM - 9:00 PM</p>
@@ -207,6 +236,7 @@
     </div>
     <div class="event">
         <h3 class ="h3" >Career Fair</h3>
+	<img src="https://i.pinimg.com/474x/b4/d2/48/b4d2482d249d14e2d27d4e7d0918c62c.jpg" alt="Example Image" class = "left-img">
         <p>TBA</p>
         <p>Location:Parking lot A</p>
         <p>Time: 11:00 AM - 3:00 PM</p>
@@ -223,7 +253,8 @@
     </div>
     <div class="event">
         <h3 class ="h3">Art Exhibition</h3>
-         <p>Location:Parking lot B</p>
+        <img src = "https://i.pinimg.com/736x/64/1e/fa/641efa142b4983048457ee8a247df4b8.jpg" alt="Example Image" class = "left-img">
+        <p>Location:Parking lot B</p>
         <p>TBA</p>
         <p>Time: 1:00 PM - 5:00 PM</p>
         <p>Description: Discover the talent of our students at the annual art exhibition showcasing various forms of art.</p>
