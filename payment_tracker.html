@@ -5,31 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Dashboard | University Events</title>
     <script src="https://cdn.tailwindcss.com"></script>
+<style>
+ .left-img {
+           	float: left;
+            	margin-right: 15px; 
+    		width: 150px;  /* Adjust width to fit well within its container */
+    		height: auto;  /* Maintain aspect ratio */
+    		margin-right: 0px; /* Space between image and text */
+    		max-width: 100%; /* Ensures it doesn't overflow its container */
+		max-height: 100%;
+        }
+</style>
+ <img src="C:/Users/HP/OneDrive/Documents/APT2080/webpage/logo.jpg" class = "left-img"><br>
 </head>
-<body class="bg-gray-100 p-6">
-    <div class="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold mb-4">University Event Payment Dashboard</h1>
+<body class="bg-yellow-100 p-6">
+    <div class="max-w-6xl mx-auto bg-blue-50 p-6 rounded-lg shadow-md border border-blue-300">
+        <h1 class="text-2xl font-bold text-blue-800 mb-4">University Event Payment Dashboard</h1>
         
         <!-- Stats Overview -->
         <div class="grid grid-cols-3 gap-4 mb-6">
-            <div class="bg-blue-100 p-4 rounded-lg">
-                <h2 class="text-lg font-semibold">Total Revenue</h2>
-                <p class="text-2xl font-bold">$12,450</p>
+            <div class="bg-yellow-200 p-4 rounded-lg border border-yellow-500">
+                <h2 class="text-lg font-semibold text-blue-900">Total Revenue</h2>
+                <p class="text-2xl font-bold text-blue-700">$12,450</p>
             </div>
-            <div class="bg-yellow-100 p-4 rounded-lg">
-                <h2 class="text-lg font-semibold">Pending Payments</h2>
-                <p class="text-2xl font-bold">$1,250</p>
+            <div class="bg-yellow-300 p-4 rounded-lg border border-yellow-600">
+                <h2 class="text-lg font-semibold text-blue-900">Pending Payments</h2>
+                <p class="text-2xl font-bold text-blue-700">$1,250</p>
             </div>
-            <div class="bg-green-100 p-4 rounded-lg">
-                <h2 class="text-lg font-semibold">Completed Transactions</h2>
-                <p class="text-2xl font-bold">243</p>
+            <div class="bg-yellow-400 p-4 rounded-lg border border-yellow-700">
+                <h2 class="text-lg font-semibold text-blue-900">Completed Transactions</h2>
+                <p class="text-2xl font-bold text-blue-700">243</p>
             </div>
         </div>
         
         <!-- Search & Filter -->
         <div class="flex justify-between mb-4">
-            <input type="text" id="search" placeholder="Search payments..." class="border p-2 rounded w-1/3" onkeyup="filterTable()">
-            <select id="statusFilter" class="border p-2 rounded" onchange="filterTable()">
+            <input type="text" id="search" placeholder="Search payments..." class="border p-2 rounded w-1/3 border-blue-400 bg-blue-100 text-blue-900" onkeyup="filterTable()">
+            <select id="statusFilter" class="border p-2 rounded border-blue-400 bg-blue-100 text-blue-900" onchange="filterTable()">
                 <option value="All">All</option>
                 <option value="Completed">Completed</option>
                 <option value="Pending">Pending</option>
@@ -38,33 +50,33 @@
         
         <!-- Payments Table -->
         <div class="overflow-x-auto">
-            <table class="w-full border-collapse border border-gray-200">
+            <table class="w-full border-collapse border border-blue-300">
                 <thead>
-                    <tr class="bg-gray-300">
-                        <th class="p-2 border">Student</th>
-                        <th class="p-2 border">Event</th>
-                        <th class="p-2 border">Amount</th>
-                        <th class="p-2 border">Status</th>
+                    <tr class="bg-yellow-300 text-blue-900">
+                        <th class="p-2 border border-blue-300">Student</th>
+                        <th class="p-2 border border-blue-300">Event</th>
+                        <th class="p-2 border border-blue-300">Amount</th>
+                        <th class="p-2 border border-blue-300">Status</th>
                     </tr>
                 </thead>
                 <tbody id="paymentsTable">
-                    <tr class="bg-white">
-                        <td class="p-2 border">Alice Johnson</td>
-                        <td class="p-2 border">Tech Conference</td>
-                        <td class="p-2 border">$100</td>
-                        <td class="p-2 border text-green-500">Completed</td>
+                    <tr class="bg-blue-50">
+                        <td class="p-2 border border-blue-300">Alice Johnson</td>
+                        <td class="p-2 border border-blue-300">Tech Conference</td>
+                        <td class="p-2 border border-blue-300">$100</td>
+                        <td class="p-2 border border-blue-300 text-green-500">Completed</td>
                     </tr>
-                    <tr class="bg-gray-50">
-                        <td class="p-2 border">Bob Smith</td>
-                        <td class="p-2 border">Music Fest</td>
-                        <td class="p-2 border">$80</td>
-                        <td class="p-2 border text-yellow-500">Pending</td>
+                    <tr class="bg-blue-100">
+                        <td class="p-2 border border-blue-300">Bob Smith</td>
+                        <td class="p-2 border border-blue-300">Music Fest</td>
+                        <td class="p-2 border border-blue-300">$80</td>
+                        <td class="p-2 border border-blue-300 text-yellow-500">Pending</td>
                     </tr>
-                    <tr class="bg-white">
-                        <td class="p-2 border">Emma Davis</td>
-                        <td class="p-2 border">Art Gala</td>
-                        <td class="p-2 border">$50</td>
-                        <td class="p-2 border text-green-500">Completed</td>
+                    <tr class="bg-blue-50">
+                        <td class="p-2 border border-blue-300">Emma Davis</td>
+                        <td class="p-2 border border-blue-300">Art Gala</td>
+                        <td class="p-2 border border-blue-300">$50</td>
+                        <td class="p-2 border border-blue-300 text-green-500">Completed</td>
                     </tr>
                 </tbody>
             </table>

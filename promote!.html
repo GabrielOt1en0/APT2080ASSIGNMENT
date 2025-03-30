@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promotion Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffd6d;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .background {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .shape:nth-child(1) {
+            background: linear-gradient(#1845ad, #23a2f6);
+            left: 75%;
+            top: 10%;
+        }
+     
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #00cdff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .signup-btn {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .signup-btn:hover {
+            background: #0056b3;
+        }
+	 .left-img {
+           	float: left;
+            	margin-right: 15px; 
+    		width: 150px;  /* Adjust width to fit well within its container */
+    		height: auto;  /* Maintain aspect ratio */
+    		margin-right: 0px; /* Space between image and text */
+    		max-width: 100%; /* Ensures it doesn't overflow its container */
+		max-height: 100%;
+        }
+    </style>
+ <img src="C:/Users/HP/OneDrive/Documents/APT2080/webpage/logo.jpg" class = "left-img"><br>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+        <h2>Promote Your Event</h2>
+        <select id="platformSelect">
+            <option value="" disabled selected>Select a Platform</option>
+            <option value="https://www.facebook.com/signup">Facebook</option>
+            <option value="https://www.twitter.com/i/flow/signup">Twitter</option>
+            <option value="https://www.instagram.com/accounts/emailsignup/">Instagram</option>
+            <option value="https://www.linkedin.com/signup">LinkedIn</option>
+        </select>
+        <button class="signup-btn" onclick="redirectToSignup()">Sign Up</button>
+    </div>
+    <script>
+        function redirectToSignup() {
+            var platformUrl = document.getElementById("platformSelect").value;
+            if (platformUrl) {
+                window.location.href = platformUrl;
+            } else {
+                alert("Please select a platform first.");
+            }
+        }
+    </script>
+</body>
+</html>

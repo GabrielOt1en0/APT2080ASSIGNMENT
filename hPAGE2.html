@@ -126,6 +126,7 @@
             text-align: left;
             margin: 10px 0; /* Add margin for spacing */
             color: white;
+            background-color:black;
         }
 
       
@@ -193,12 +194,57 @@
             background-color: inherit;
             color: black;
         }
+	.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+	.overlay2 {
+  position: fixed; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: auto;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+         .slideshow-container:hover .overlay {
+        opacity: 1;
+        }
+        .slideshow-container:hover .overlay2 {
+        opacity: 1;
+        }
+        .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
     </style>
 </head>
 <body>
     <div class="topnav">
-        <a href="signup.html">Sign up (attendee)</a>
+        <a href="signup.html">Sign up</a>
     </div>
 
     <div class="tab-container">
@@ -230,26 +276,30 @@
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 4</div>
-  <img src="https://i.pinimg.com/474x/45/64/12/456412c6662310f30db7d0aff82d2752.jpg" style="width:100%">
-  <div class="text">Annual science fair</div>
+  <img src="https://i.pinimg.com/474x/e2/9a/af/e29aaf80dbcc410ba1cf12274c77b594.jpg" style="width:100%" onclick="redirectToSignup()">
+  <div class="overlay">You must sign up to read more</div>
+  <div class="overlay2">Annual science fair</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 4</div>
-  <img src="https://i.pinimg.com/474x/4a/bd/48/4abd481c6b1135a42456d06aabb4b8f1.jpg" style="width:100%">
-  <div class="text">Spring festival</div>
+  <img src="https://i.pinimg.com/474x/01/2e/af/012eaf64cff1d6bbffb07eb63f5d1326.jpg" style="width:100%" onclick="redirectToSignup()"> 
+  <div class="overlay">You must sign up to read more</div>
+  <div class="overlay2">Spring festival</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 4</div>
-  <img src="https://i.pinimg.com/474x/d6/fc/5b/d6fc5bce62628ba95355bd15bf4c98fb.jpg" style="width:100%">
-  <div class="text">Career fair</div>
+  <img src="https://i.pinimg.com/474x/b4/d2/48/b4d2482d249d14e2d27d4e7d0918c62c.jpg" style="width:100%" onclick="redirectToSignup()">
+  <div class="overlay">You must sign up to read more</div>
+  <div class="overlay2">Career fair</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">4 / 4</div>
-  <img src="https://i.pinimg.com/474x/ed/1a/65/ed1a65f7414f0b1cffad2e7be97f40f5.jpg" style="width:100%">
-  <div class="text">Art exhibition</div>
+  <img src="https://i.pinimg.com/736x/64/1e/fa/641efa142b4983048457ee8a247df4b8.jpg" style="width:100%" onclick="redirectToSignup()">
+  <div class="overlay">You must sign up to read more</div>
+  <div class="overlay2">Art exhibition</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -316,5 +366,21 @@ function showSlides(n) {
 }
      
     </script>
+    <script>
+     function redirectToSignup() {
+        window.location.href = "signup.html";
+    }
+     document.addEventListener("DOMContentLoaded", function() {
+        let newsLinks = document.querySelectorAll("#news a");
+        newsLinks.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                alert("You must sign up to access these features");
+                window.location.href = "signup.html";
+            });
+        });
+    });
+    </script>
+
 </body>
 </html>
