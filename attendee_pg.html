@@ -4,6 +4,10 @@
     <title>Welcome Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <style>
     a:link {
         color: #46cde2;
@@ -104,7 +108,7 @@
     p1 {
         font-family: Georgia;
         text-align: center;
-	color: #46cde2;
+	color: #2140b5;
     }
 
     p {
@@ -270,6 +274,40 @@
 
     </div>
 </div>
+	<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">FEEDBACK</h3>
+  <p class="w3-center"><em>Feel free to provide feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <a href="https://www.google.co.ke/maps/place/United+States+International+University+Africa/@-1.2180891,36.876639,17z" target="_blank">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+        </a>
+        NAIROBI, KE<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +254 11121314<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+      </div>
+
+      <form action="https://formspree.io/f/yourformID" method="POST">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <textarea class="w3-input w3-border" placeholder="Message" required name="Message" rows="4"></textarea>
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+	
 	 <script type="module">
         import { fetchEvents, subscribeToEvents } from "./supabase.js";
 
